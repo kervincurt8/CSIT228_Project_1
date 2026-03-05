@@ -1,3 +1,3 @@
-public class ITransaction {
-    
+public interface ITransaction {
+    void execute();
 }
