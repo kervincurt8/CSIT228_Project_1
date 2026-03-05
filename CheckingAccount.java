@@ -7,6 +7,9 @@ public class CheckingAccount extends Account {
     @Override
     public void accountType(){
         System.out.println("Checking Account");
-       
+       System.out.println("Account Histyory: ");
+        for(String transaction : transactionHistory){
+            System.out.println(transaction);
+        }
     }
 }

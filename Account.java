@@ -1,5 +1,7 @@
+import java.util.Stack;
 public abstract class Account {
 
+    protected Stack<String> transactionHistory = new Stack<>();
     protected int accountNumber;
     protected double balance;
 
@@ -11,13 +13,16 @@ public abstract class Account {
     public void deposit(double amount){
         balance += amount;
         System.out.println("Deposited: " + amount);
+        transactionHistory.push("Deposit: " + amount);
     }
 
     public void withdraw(double amount){
         if(amount <= balance){
             balance -= amount;
             System.out.println("Withdrawn: " + amount);
+            transactionHistory.push("Withdrawal: " + amount);
         }else{
+            transactionHistory.push("Failed Withdrawal: " + amount);
             System.out.println("Insufficient Balance");
         }
     }
