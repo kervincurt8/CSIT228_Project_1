@@ -1,4 +1,4 @@
-public class Transaction {
+public abstract class Transaction {
 
     protected double amount;
 
@@ -6,7 +6,5 @@ public class Transaction {
         this.amount = amount;
     }
 
-    public void process(){
-        System.out.println("Transaction amount: " + amount);
-    }
+    public abstract void process(Account account);
 }

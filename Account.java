@@ -2,11 +2,11 @@ import java.util.Stack;
 public abstract class Account {
 
     protected Stack<String> transactionHistory = new Stack<>();
-    protected int accountNumber;
+    protected String accountNumber;
     protected double balance;
 
-    public Account(int accountNumber, double balance){
-        this.accountNumber = accountNumber;
+    public Account(String accNum, double balance){
+        this.accountNumber = accNum;
         this.balance = balance;
     }
 
@@ -32,5 +32,17 @@ public abstract class Account {
         System.out.println("Balance: " + balance);
     }
 
+    public void showTransactionHistory(){
+
+    System.out.println("Transaction History:");
+
+    if(transactionHistory.isEmpty()){
+        System.out.println("No transactions yet.");
+    }else{
+        for(String transaction : transactionHistory){
+            System.out.println(transaction);
+        }
+    }
+}
     public abstract void accountType();
 }

@@ -18,11 +18,10 @@ public class Main {
         Account account = null;
         int choice;
 
-        account = new SavingsAccount(accNum, balance);
-        account = new CheckingAccount(accNum, balance);
+        
 
         do {
-
+            
             System.out.println("\n===== ATM MENU =====");
             System.out.println("1. Savings Account");
             System.out.println("2. Checking Account");
@@ -38,22 +37,32 @@ public class Main {
             switch(choice){
 
                 case 1:
-                    account.accountType();
+                    if(account == null){
+                        account = new SavingsAccount(accNum, balance);
+                        System.out.println("Savings Account Created");
+                    }else{
+                        System.out.println("Account already exists.");
+                    }
+                        account.accountType();
                     break;
 
                 case 2:
-                    account.accountType();
+                    if(account == null){
+                        account = new CheckingAccount(accNum, balance);
+                        System.out.println("Checking Account Created");
+                    }
+
+                        account.accountType();      
+                        account.showTransactionHistory();  
+                        account.displayAccount();   
                     break;
 
                 case 3:
                     if(account != null){
                         System.out.print("Deposit Amount: ");
                         double dep = sc.nextDouble();
-
                         Deposit d = new Deposit(dep);
-                        d.process();
-
-                        account.deposit(dep);
+                        d.process(account);
                     }else{
                         System.out.println("Create an account first.");
                     }
@@ -65,13 +74,12 @@ public class Main {
                         double wit = sc.nextDouble();
 
                         Withdraw w = new Withdraw(wit);
-                        w.process();
-
-                        account.withdraw(wit);
+                        w.process(account);
                     }else{
                         System.out.println("Create an account first.");
                     }
                     break;
+                    
 
                 case 5:
                     if(account != null){

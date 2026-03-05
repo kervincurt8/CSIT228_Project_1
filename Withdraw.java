@@ -5,7 +5,15 @@ public class Withdraw extends Transaction {
     }
 
     @Override
-    public void process(){
-        System.out.println("Withdraw Transaction: " + amount);
+    public void process(Account account){
+
+        if(amount <= account.balance){
+            account.balance -= amount;   
+            System.out.println("Withdraw Transaction: " + amount);
+            account.transactionHistory.push("Withdraw: " + amount);
+        }else{
+            System.out.println("Insufficient Balance");
+            account.transactionHistory.push("Failed Withdrawal: " + amount);
+        }
     }
 }

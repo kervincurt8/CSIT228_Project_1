@@ -5,7 +5,9 @@ public class Deposit extends Transaction {
     }
 
     @Override
-    public void process(){
+    public void process(Account account){
+        account.balance += amount;
         System.out.println("Deposit Transaction: " + amount);
+        account.transactionHistory.push("Deposit: " + amount);
     }
 }

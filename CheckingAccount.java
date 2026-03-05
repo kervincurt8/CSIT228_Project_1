@@ -1,13 +1,13 @@
 public class CheckingAccount extends Account {
 
-    public CheckingAccount(int accountNumber, double balance){
-        super(accountNumber, balance);
+    public CheckingAccount(String accNum, double balance){
+        super(accNum, balance);
     }
 
     @Override
     public void accountType(){
         System.out.println("Checking Account");
-       System.out.println("Account Histyory: ");
+       System.out.println("Account History: ");
         for(String transaction : transactionHistory){
             System.out.println(transaction);
         }
