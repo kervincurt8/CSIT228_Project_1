@@ -1,4 +1,4 @@
-public class DepositTransaction {
+public class DepositTransaction implements ITransaction{
     private BaseAccount account;
     private double amount;
 

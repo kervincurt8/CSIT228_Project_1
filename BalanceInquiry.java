@@ -1,4 +1,4 @@
-public class BalanceInquiry {
+public class BalanceInquiry implements ITransaction{
      private BaseAccount account;
 
     public BalanceInquiry(BaseAccount acc) {

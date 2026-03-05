@@ -7,7 +7,9 @@ public class ATMSystem {
     private Scanner sc = new Scanner(System.in);
 
     public void start() {
-        System.out.println("Welcome to CodeHub ATM Machine!");
+        System.out.println("=====================================");
+        System.out.println("|| Welcome to CodeHub ATM Machine! ||");
+        System.out.println("=====================================");
 
         int attempts = 0;
         User currentUser = null;
