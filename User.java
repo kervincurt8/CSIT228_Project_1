@@ -1,4 +1,3 @@
-//Mark-Agad was here
 
 public class User {
     private String name;
