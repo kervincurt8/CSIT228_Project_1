@@ -18,6 +18,9 @@ public class Main {
         Account account = null;
         int choice;
 
+        account = new SavingsAccount(accNum, balance);
+        account = new CheckingAccount(accNum, balance);
+
         do {
 
             System.out.println("\n===== ATM MENU =====");
@@ -31,16 +34,14 @@ public class Main {
             System.out.print("Enter: ");
 
             choice = sc.nextInt();
-
+            System.out.println("====================");
             switch(choice){
 
                 case 1:
-                    account = new SavingsAccount(accNum, balance);
                     account.accountType();
                     break;
 
                 case 2:
-                    account = new CheckingAccount(accNum, balance);
                     account.accountType();
                     break;
 
