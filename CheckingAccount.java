@@ -1,3 +1,12 @@
-public class CheckingAccount {
-    
+//Mark-Agad was here
+
+public class CheckingAccount extends BaseAccount {
+    public CheckingAccount(String accNum, String pin, double bal) {
+        super(accNum, pin, bal);
+    }
+
+    @Override
+    public String getAccountType() {
+        return "Checking";
+    }
 }
