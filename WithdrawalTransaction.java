@@ -1,4 +1,3 @@
-//Mark-Agad was here!
 
 public class WithdrawalTransaction implements ITransaction {
     private BaseAccount account;
